@@ -3,8 +3,8 @@ import Allcard from "./Allcard";
 
 const All= () => {
   const [alldata, setAlldata] = useState([]);
-  const [cdropdown, setcDropdown] = useState("in");
-  const [dropdown, setDropdown] = useState("business");
+  const [cdropdown, setcDropdown] = useState("");
+  const [dropdown, setDropdown] = useState("");
 
   const datafromapi = async () => {
     try {
@@ -40,7 +40,7 @@ const All= () => {
       </div>
       </div>
       <div className="grid grid-cols-2 gap-10">
-        {alldata.map((values, index) => (
+        {alldata?.map((values, index) => (
           <Allcard
             key={index?.source?.id ? index.source.id : ""}
             name={values?.source?.name ? values.source.name : ""}

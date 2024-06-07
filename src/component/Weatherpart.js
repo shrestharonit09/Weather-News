@@ -3,7 +3,7 @@ import Weather from './Weather'; // Assuming Weather component displays single w
 import Weathers from './Weathers'; // Assuming Weathers component displays multiple weather data
 
 const WeatherPart = () => {
-  const [displayComponent, setDisplayComponent] = useState('Weather'); // Initial active component
+  const [displayComponent, setDisplayComponent] = useState(''); // Initial active component
 
   const handleClick = (component) => {
     setDisplayComponent(component);

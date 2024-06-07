@@ -1,6 +1,6 @@
 import React from "react";
 
-const Allcard = (props) => {
+const Navbarcard = (props) => {
   return (
     <div className="flex justify-center">
       <div className="flex flex-col gap-5 border rounded-lg bg-gray-300 w-[45vw]">
@@ -38,4 +38,4 @@ const Allcard = (props) => {
   );
 };
 
-export default Allcard;
+export default Navbarcard;
