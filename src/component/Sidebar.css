@@ -1,0 +1,31 @@
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+ 
+    height:0vh; 
+    animation-name: example;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes example{
+    from {width: 0px;height:0vh;}
+    to {width:240px;height:62vh;}
+  }
+  /* Style the sidebar items as needed */
+  .sidebar-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-container li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+
