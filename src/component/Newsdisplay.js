@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+
 import { ClipLoader } from "react-spinners";
 import Logo from "../Images/News.svg";
 import { IoIosMenu } from "react-icons/io";
@@ -9,6 +10,7 @@ import Loginmodal from "./Loginmodal";
 import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "./Sidebar";
 import Contactme from "./Contactme";
+import Footer from "./Footer";
 
 const Newsdisplay = () => {
   const [data, setData] = useState([]);
@@ -141,17 +143,17 @@ const Newsdisplay = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-5 border border-green-800">
+    <div className="w-full flex flex-col gap-5">
       <div className="flex justify-center bg-blue-700 fixed top-0 w-full">
-        <div className="flex gap-8 px-4 py-4">
+        <div className="px-1 md:px-2 md:py-2">
           <div className="w-[90vw] flex justify-between">
-            <div className="px-4">
-              <img className="h-8 md:h-12 lg:h-20 w-8 md:w-12 lg:w-20" src={Logo} alt="logo" />
+            <div className="px-2 py-4 md:py-2">
+              <img className="h-12 w-12 md:h-16 md:w-16 xl:h-20 xl:w-20 " src={Logo} alt="logo" />
             </div>
-            {width > 750 ? (
-              <div className="flex gap-1 md:gap-8 px-2 md:px-4 py-2 lg:py-4">
+            {width >1000? (
+              <div className="flex md:gap-3 xl:gap-8 px-2 md:px-4 py-2 lg:py-4">
                 <button
-                  className="text-white font-bold hover:text-sky-500  text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("");
                     handleImage(
@@ -165,7 +167,7 @@ const Newsdisplay = () => {
                   Home
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500  text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("business");
                     handlehome(false);
@@ -177,7 +179,7 @@ const Newsdisplay = () => {
                   Business
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500  text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("sports");
                     handlehome(false);
@@ -189,7 +191,7 @@ const Newsdisplay = () => {
                   Sports
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500  text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("entertainment");
                     handlehome(false);
@@ -201,7 +203,7 @@ const Newsdisplay = () => {
                   Entertainment
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("general");
                     handlehome(false);
@@ -213,7 +215,7 @@ const Newsdisplay = () => {
                   General
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("health");
                     handlehome(false);
@@ -225,7 +227,7 @@ const Newsdisplay = () => {
                   Health
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500  text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("science");
                     handlehome(false);
@@ -237,7 +239,7 @@ const Newsdisplay = () => {
                   Science
                 </button>
                 <button 
-                  className="text-white font-bold hover:text-sky-500 text-sm lg:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
                   onClick={() => {
                     handleCatagory("technology");
                     handlehome(false);
@@ -252,10 +254,10 @@ const Newsdisplay = () => {
             ) : (
               ""
             )}
-            <div className="flex gap-8 px-4 py-4">
+            <div className="flex gap-4 md:gap-6 lg:gap-8 px-4 py-4">
               <button>
                 <select
-                  className="rounded-lg bg-sky-500 text-white text-sm lg:text-lg font-bold"
+                  className="rounded-lg bg-sky-500 text-white text-sm md:text-lg font-bold"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                 >
@@ -267,18 +269,18 @@ const Newsdisplay = () => {
               </button>
               {islogin ? (
                 <button onClick={handleLogout}>
-                  <h1 className="text-white text-sm rounded-full bg-red-600 p-2 hover:shadow-lg hover:bg-red-800">
+                  <h1 className="text-white text-sm rounded-full bg-red-600 px-1 md:p-1 lg:p-2 hover:shadow-lg hover:bg-red-800">
                     LogOut
                   </h1>
                 </button>
               ) : (
                 <button onClick={() => setIsLoginModalVisible(true)}>
-                  <CgProfile className="text-white text-xl lg:text-3xl hover:text-sky-500" />
+                  <CgProfile className="text-white text-xl md:text-2xl lg:text-3xl hover:text-sky-500" />
                 </button>
               )}
-              {width < 750 ? (
+              {width < 1000 ? (
                 <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                  <IoIosMenu className="text-white text-3xl hover:text-sky-500" />
+                  <IoIosMenu className="text-white text-2xl md:text-3xl hover:text-sky-500" />
                 </button>
               ) : (
                 ""
@@ -295,32 +297,32 @@ const Newsdisplay = () => {
         onClose={() => setIsLoginModalVisible(false)}
         onhandleSuccess={handleSuccess}
       />
-      <div className=" mt-24 flex justify-between p-4">
+      <div className="mt-16 md:mt-20 lg:mt-24 flex justify-between p-4">
         <div className="flex gap-1">
-          <h1 className="text-gray-700 text-xl">{day[time.getDay()]} ,</h1>
-          <h1 className="text-gray-700 text-xl">
+          <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">{day[time.getDay()]},</h1>
+          <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">
             {month[time.getMonth() + 1]}
           </h1>
-          <h1 className="text-gray-700 text-xl">{time.getDate()} ,</h1>
-          <h1 className="text-gray-700 text-xl">{time.getFullYear()}</h1>
+          <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">{time.getDate()},</h1>
+          <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">{time.getFullYear()}</h1>
         </div>
         <div>
           {isHome ? (
             <div className="flex justify-center">
-              <img height={120} width={120} src={image} alt="Image" />
+              <img className="h-12 w-12 md:h-16 md:w-16 lg:h-24 lg:w-24" src={image} alt="Image" />
             </div>
           ) : (
             <div className="flex justify-center">
-              <img height={80} width={80} src={image} alt="Image" />
+              <img className="h-12 w-12 md:h-16 md:w-16 lg:h-24 lg:w-24" src={image} alt="Image" />
             </div>
           )}
 
           {isHome ? (
-            <h1 className="text-3xl text-blue-700 font-bold text-center">
+            <h1 className="text-xl md:text-2xl lg:text-3xl text-blue-700 font-bold text-center">
               {headline}
             </h1>
           ) : (
-            <h1 className="text-3xl text-blue-700 font-bold text-center">
+            <h1 className="text-xl md:text-2xl lg:text-3xl text-blue-700 font-bold text-center">
               {catagory &&
                 `${catagory.charAt(0).toUpperCase() + catagory.slice(1)} News`}
             </h1>
@@ -328,7 +330,7 @@ const Newsdisplay = () => {
         </div>
         <div>
           {weather.main && (
-            <h1 className="text-gray-700 text-xl">
+            <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">
               {weather.main.temp}°C , {weather.name}
             </h1>
           )}
@@ -345,7 +347,7 @@ const Newsdisplay = () => {
         />
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 rounded-lg ml-2 hover:bg-blue-800"
+          className="bg-blue-600 text-white p-2 rounded-lg ml-2 hover:bg-blue-800 text-sm sm:text-base md:text-xl"
         >
           Search
         </button>
@@ -360,6 +362,8 @@ const Newsdisplay = () => {
       )}
       <hr />
       <Contactme loginvayo={islogin} />
+
+      <Footer/>
     </div>
   );
 };

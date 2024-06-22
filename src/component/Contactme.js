@@ -41,13 +41,13 @@ const ContactMe = (props) => {
   };
 
   return (
-    <div className="flex justify-center mb-12 ">
+    <div className="flex justify-center mb-12">
       <ToastContainer/>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col py-4 px-4 gap-5 bg-gray-300 rounded-lg border border-gray-300 w-[35vw] p-2 shadow-lg"
+        className="flex flex-col py-4 px-4 gap-5 bg-gray-300 rounded-lg border border-gray-300 w-[65vw] sm:w-[50vw] md:w-[45vw] lg:w-[35vw] p-2 shadow-lg"
       >
-        <h1 className="text-center text-3xl font-bold text-blue-600">
+        <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-blue-600">
           Contact Me
         </h1>
 
