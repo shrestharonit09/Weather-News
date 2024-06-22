@@ -88,7 +88,7 @@ const WeatherForecast = () => {
     };
 
     fetchDataForAllDistricts();
-  }, []);
+  }, [districts]);
 
   const handleDistrictChange = (event) => {
     const selectedDistrict = event.target.value;

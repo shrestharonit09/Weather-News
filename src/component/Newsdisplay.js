@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-
 import { ClipLoader } from "react-spinners";
 import Logo from "../Images/News.svg";
 import { IoIosMenu } from "react-icons/io";
@@ -21,10 +20,9 @@ const Newsdisplay = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [weather, setWeather] = useState([]);
-  const [time] = useState(new Date());
+  const [time, setTime] = useState(new Date());
 
   const [width, setWidth] = useState(window.innerWidth);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,8 +54,11 @@ const Newsdisplay = () => {
       );
       const dataAPI = await response.json();
       setWeather(dataAPI);
-    } catch (error) {}
+    } catch (error) {
+      console.error("Error fetching weather data: ", error);
+    }
   };
+
   const getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -89,11 +90,11 @@ const Newsdisplay = () => {
 
   useEffect(() => {
     datafromapi();
-  }, [catagory, country, searchQuery]);
+  }, [catagory, country, searchQuery, isHome]);
 
   useEffect(() => {
     getLocation();
-    const interval = setInterval(() => new Date(), 1000);
+    const interval = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -148,9 +149,9 @@ const Newsdisplay = () => {
         <div className="px-1 md:px-2 md:py-2">
           <div className="w-[90vw] flex justify-between">
             <div className="px-2 py-4 md:py-2">
-              <img className="h-12 w-12 md:h-16 md:w-16 xl:h-20 xl:w-20 " src={Logo} alt="logo" />
+              <img className="h-12 w-12 md:h-16 md:w-16 xl:h-20 xl:w-20 " src={Logo} alt="news" />
             </div>
-            {width >1000? (
+            {width > 1000 ? (
               <div className="flex md:gap-3 xl:gap-8 px-2 md:px-4 py-2 lg:py-4">
                 <button
                   className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl "
@@ -363,7 +364,7 @@ const Newsdisplay = () => {
       <hr />
       <Contactme loginvayo={islogin} />
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };
