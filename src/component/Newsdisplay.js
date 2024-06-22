@@ -141,8 +141,8 @@ const Newsdisplay = () => {
   };
 
   return (
-    <div className="w-full flex flex-col gap-5 border border-green-800">
-      <div className="flex justify-center bg-blue-700 fixed top-0 w-full">
+    <div className="w-full flex flex-col gap-5 border border-green-800 mt-10">
+      <div className="flex justify-center bg-blue-700 fixed top-10 w-full">
         <div className="flex gap-8 px-4 py-4">
           <div className="w-[90vw] flex justify-between">
             <div className="px-4">

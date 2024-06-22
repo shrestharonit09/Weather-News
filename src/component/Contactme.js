@@ -41,7 +41,7 @@ const ContactMe = (props) => {
   };
 
   return (
-    <div className="flex justify-center mb-12 ">
+    <div className="flex justify-center my-12 ">
       <ToastContainer/>
       <form
         onSubmit={handleSubmit}
