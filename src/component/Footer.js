@@ -9,7 +9,7 @@ const Footer = () => {
           src="https://i0.wp.com/venture4tech.com/w3/wp-content/uploads/hori-logo.jpg?resize=1268%2C577&ssl=1"
           alt="Company Logo"
         />
-        <h1 className="font-semibold text-center mt-2 md:mt-0">
+        <h1 className="font-semibold text-center mt-2 md:mt-0 lg:text-xl">
           © 2024 Venture Four Technology Pvt Ltd. All rights reserved.
         </h1>
       </div>
