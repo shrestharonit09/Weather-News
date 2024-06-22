@@ -64,7 +64,7 @@ const CommentSection = ({ publishDate, logincomments }) => {
 
   return (
     <div className="p-4">
-      <h3 className="text-xl font-bold mb-2">Comments</h3>
+      <h3 className="text-sm sm:text-base md:text-xl font-bold mb-2">Comments</h3>
       {comments.map((comment) => (
         <div
           key={comment.id}

@@ -7,23 +7,23 @@ const Newsdisplaycard = (props) => {
     <div className="flex flex-col border rounded-lg bg-gray-100 shadow-md w-full">
       <img className="h-60 w-full object-cover rounded-t-lg" src={props.image} alt="News" />
       <div className="flex flex-col gap-4 p-6 flex-grow">
-        <h1 className="text-2xl font-bold mb-2">{props.title}</h1>
+        <h1 className="text-sm sm:text-base md:text-xl font-bold mb-2">{props.title}</h1>
         <div className="flex flex-col gap-2">
           <div className="flex">
-            <h2 className="font-bold">Description:&nbsp;</h2>
-            <p>{props.description}</p>
+            <h2 className="text-sm sm:text-base md:text-xl font-bold">Description:&nbsp;</h2>
+            <p  className="py-1">{props.description}</p>
           </div>
           <div className="flex">
-            <h2 className="font-bold">Published Date:&nbsp;</h2>
-            <p>{props.publishdate.slice(0, 10)}</p>
+            <h2 className="text-sm sm:text-base md:text-xl font-bold">Published Date:&nbsp;</h2>
+            <p  className="py-1">{props.publishdate.slice(0, 10)}</p>
           </div>
           <div className="flex">
-            <h2 className="font-bold">Content:&nbsp;</h2>
-            <p>{props.content}</p>
+            <h2 className="text-sm sm:text-base md:text-xl font-bold">Content:&nbsp;</h2>
+            <p  className="py-1">{props.content}</p>
           </div>
           <div className="flex">
-            <h2 className="font-bold">Author:&nbsp;</h2>
-            <p>{props.author}</p>
+            <h2 className="text-sm sm:text-base md:text-xl font-bold">Author:&nbsp;</h2>
+            <p className="py-1">{props.author}</p>
           </div>
         </div>
       </div>

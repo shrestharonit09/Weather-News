@@ -9,6 +9,7 @@ const Loginmodal = (props) => {
   const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -28,6 +29,12 @@ const Loginmodal = (props) => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
+    if (password.length < 8) {
+      setPasswordError("Password must be at least 8 characters long");
+      return;
+    }
+    setPasswordError("");
+    
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
     const userExists = storedUsers.some((user) => user.username === username);
@@ -45,11 +52,16 @@ const Loginmodal = (props) => {
 
   const handlePasswordReset = (e) => {
     e.preventDefault();
+    if (newPassword.length < 8) {
+      setPasswordError("Password must be at least 8 characters long");
+      return;
+    }
     if (newPassword !== confirmPassword) {
       toast.error("Passwords do not match");
       return;
     }
-
+    setPasswordError("");
+    
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
     const userIndex = storedUsers.findIndex((user) => user.username === username);
 
@@ -97,6 +109,7 @@ const Loginmodal = (props) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {passwordError && <p className="text-red-600">{passwordError}</p>}
             </div>
             <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700">
               {isSignUp ? "Sign Up" : "Login"}
@@ -121,6 +134,7 @@ const Loginmodal = (props) => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
+              {passwordError && <p className="text-red-600">{passwordError}</p>}
             </div>
             <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-700">
               Reset Password

@@ -27,7 +27,7 @@ const ContactMe = (props) => {
       .send("service_un7iwjl", "template_ucmb9tw", templateParams, "IvvcsF8ZNJi2jqvYY")
       .then(
         (response) => {
-          toast.success("Your message has been sent successfully!");
+          alert("Your message has been sent successfully!");
           console.log("SUCCESS!", response.status, response.text);
         },
         (error) => {
@@ -41,13 +41,17 @@ const ContactMe = (props) => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex justify-center my-12 ">
+=======
+    <div className="flex justify-center mb-12">
+>>>>>>> 2221c6465a98228cb25abe524b8232bd6a0182aa
       <ToastContainer/>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col py-4 px-4 gap-5 bg-gray-300 rounded-lg border border-gray-300 w-[35vw] p-2 shadow-lg"
+        className="flex flex-col py-4 px-4 gap-5 bg-gray-300 rounded-lg border border-gray-300 w-[65vw] sm:w-[50vw] md:w-[45vw] lg:w-[35vw] p-2 shadow-lg"
       >
-        <h1 className="text-center text-3xl font-bold text-blue-600">
+        <h1 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-blue-600">
           Contact Me
         </h1>
 
