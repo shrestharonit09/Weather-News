@@ -41,11 +41,7 @@ const ContactMe = (props) => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="flex justify-center my-12 ">
-=======
-    <div className="flex justify-center mb-12">
->>>>>>> 2221c6465a98228cb25abe524b8232bd6a0182aa
+    <div className="flex justify-center my-12 mt-16">
       <ToastContainer/>
       <form
         onSubmit={handleSubmit}

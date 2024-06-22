@@ -71,7 +71,7 @@ const Newsdisplay = () => {
   const datafromapi = async () => {
     setLoading(true);
     try {
-      let url = `https://newsapi.org/v2/top-headlines?country=${country}&q=${searchQuery}&apiKey=b1e85d3296134d5e9fb3669422e7a0b6`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${country}&q=${searchQuery}&apiKey=0129de2ad9fa4b9aa7d99fc1faef9d5d`;
       if (!isHome) {
         url += `&category=${catagory}`;
       }
@@ -144,7 +144,7 @@ const Newsdisplay = () => {
 
   return (
     <div className="w-full flex flex-col gap-5">
-      <div className="flex justify-center bg-blue-700 fixed top-0 w-full">
+      <div className="flex justify-center bg-blue-700 fixed top-10 w-full">
         <div className="px-1 md:px-2 md:py-2">
           <div className="w-[90vw] flex justify-between">
             <div className="px-2 py-4 md:py-2">
@@ -153,7 +153,7 @@ const Newsdisplay = () => {
             {width >1000? (
               <div className="flex md:gap-3 xl:gap-8 px-2 md:px-4 py-2 lg:py-4">
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl "
                   onClick={() => {
                     handleCatagory("");
                     handleImage(
@@ -167,7 +167,7 @@ const Newsdisplay = () => {
                   Home
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("business");
                     handlehome(false);
@@ -179,7 +179,7 @@ const Newsdisplay = () => {
                   Business
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("sports");
                     handlehome(false);
@@ -191,7 +191,7 @@ const Newsdisplay = () => {
                   Sports
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("entertainment");
                     handlehome(false);
@@ -203,7 +203,7 @@ const Newsdisplay = () => {
                   Entertainment
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("general");
                     handlehome(false);
@@ -215,7 +215,7 @@ const Newsdisplay = () => {
                   General
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("health");
                     handlehome(false);
@@ -227,7 +227,7 @@ const Newsdisplay = () => {
                   Health
                 </button>
                 <button
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("science");
                     handlehome(false);
@@ -239,7 +239,7 @@ const Newsdisplay = () => {
                   Science
                 </button>
                 <button 
-                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl"
+                  className="text-white font-bold hover:text-sky-500 md:text-base xl:text-xl 2xl:text-2xl"
                   onClick={() => {
                     handleCatagory("technology");
                     handlehome(false);
@@ -257,7 +257,7 @@ const Newsdisplay = () => {
             <div className="flex gap-4 md:gap-6 lg:gap-8 px-4 py-4">
               <button>
                 <select
-                  className="rounded-lg bg-sky-500 text-white text-sm md:text-lg font-bold"
+                  className="rounded-lg bg-sky-500 text-white text-sm md:text-lg 2xl:text-xl font-bold"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                 >
@@ -297,7 +297,7 @@ const Newsdisplay = () => {
         onClose={() => setIsLoginModalVisible(false)}
         onhandleSuccess={handleSuccess}
       />
-      <div className="mt-16 md:mt-20 lg:mt-24 flex justify-between p-4">
+      <div className="mt-28 md:mt-32 lg:mt-36 flex justify-between p-4">
         <div className="flex gap-1">
           <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">{day[time.getDay()]},</h1>
           <h1 className="text-gray-700 text-sm sm:text-base md:text-xl">
