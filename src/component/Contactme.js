@@ -27,7 +27,7 @@ const ContactMe = (props) => {
       .send("service_un7iwjl", "template_ucmb9tw", templateParams, "IvvcsF8ZNJi2jqvYY")
       .then(
         (response) => {
-          toast.success("Your message has been sent successfully!");
+          alert("Your message has been sent successfully!");
           console.log("SUCCESS!", response.status, response.text);
         },
         (error) => {
