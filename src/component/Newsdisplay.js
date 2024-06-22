@@ -21,7 +21,7 @@ const Newsdisplay = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [weather, setWeather] = useState([]);
-  const [time, setTime] = useState(new Date());
+  const [time] = useState(new Date());
 
   const [width, setWidth] = useState(window.innerWidth);
 
