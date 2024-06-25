@@ -13,8 +13,8 @@ const Weatherscards = (props) => {
     <div className="bg-green-500 rounded-lg w-[36vw] md:w-[22vw] xl:[14vw] xl:w-[14vw] flex justify-center">
       <div className="flex flex-col gap-4 mt-4">
         <div className="flex flex-col gap-1">
-        <h1 className="text-2xl text-white text-center">{props.City}</h1>
-        <h1 className="text-md text-white text-center">{day}</h1>
+        {/* <h1 className="text-2xl text-white text-center">{props.City}</h1> */}
+        <h1 className="text-2xl text-white text-center">{day}</h1>
         <h1 className="text-xs text-white text-center">{props.Datetime}</h1>
         </div>
         <div className="flex justify-center">

@@ -15,7 +15,7 @@
 
   @keyframes example{
     from {width: 0px;height:0vh;}
-    to {width:240px;height:62vh;}
+    to {width:240px;height:60vh;}
   }
   /* Style the sidebar items as needed */
   .sidebar-container ul {

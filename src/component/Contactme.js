@@ -13,7 +13,7 @@ const ContactMe = (props) => {
     e.preventDefault();
 
     if(!props.loginvayo){
-      toast.error("Login first of all");
+      alert("please login to send message to contact support");
       return;
     }
 

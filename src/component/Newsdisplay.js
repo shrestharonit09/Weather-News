@@ -21,7 +21,6 @@ const Newsdisplay = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [weather, setWeather] = useState([]);
   const [time, setTime] = useState(new Date());
-
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
