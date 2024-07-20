@@ -71,7 +71,7 @@ const Newsdisplay = () => {
   const datafromapi = async () => {
     setLoading(true);
     try {
-      let url = `https://newsapi.org/v2/top-headlines?from=2024-06-18&to=2024-06-20&country=${country}&q=${searchQuery}&apiKey=e1a9300df28c4a7a90acbfb83fb861fc`;
+      let url = `https://newsapi.org/v2/top-headlines?from=2024-07-01&to=2024-07-20&sortBy=publishedAt&country=${country}&q=${searchQuery}&apiKey=e1a9300df28c4a7a90acbfb83fb861fc`;
 
       if (!isHome) {
         url += `&category=${catagory}`;

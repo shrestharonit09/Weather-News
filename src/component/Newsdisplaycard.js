@@ -17,10 +17,10 @@ const Newsdisplaycard = (props) => {
             <h2 className="text-sm sm:text-base md:text-xl font-bold">Published Date:&nbsp;</h2>
             <p  className="lg:py-1 sm:text-base md:text-md">{props.publishdate.slice(0, 10)}</p>
           </div>
-          <div className="flex">
+          {/* <div className="flex">
             <h2 className="text-sm sm:text-base md:text-xl font-bold">Content:&nbsp;</h2>
             <p  className="lg:py-1 sm:text-base md:text-md">{props.content}</p>
-          </div>
+          </div> */}
           <div className="flex">
             <h2 className="text-base md:text-xl font-bold">Author:&nbsp;</h2>
             <p className="lg:py-1 sm:text-base md:text-md">{props.author}</p>
